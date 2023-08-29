@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./styles.css">
+		<title>Rekenmachine</title>
+	</head>
+	<body>
+	
+	<div class="input">
+		<form>
+			<label for="input">
+				<input id="input" type="text">
+			</label>
+		</form>
+	</div>
+
+	<div class="calculator-buttons">
+		<!-- Standaard rekenmachine cijfers -->
+		<input type="button" class="button number" name="seven" value="7" onclick="enterNumber(7)">
+		<input type="button" class="button number" name="eight" value="8" onclick="enterNumber(8)">
+		<input type="button" class="button number" name="nine" value="9" onclick="enterNumber(9)">
+		<br>
+		<input type="button" class="button number" name="four" value="4" onclick="enterNumber(4)">
+		<input type="button" class="button number" name="five" value="5" onclick="enterNumber(5)">
+		<input type="button" class="button number" name="six" value="6" onclick="enterNumber(6)">
+		<br>
+		<input type="button" class="button number" name="one" value="1" onclick="enterNumber(1)">
+		<input type="button" class="button number" name="two" value="2" onclick="enterNumber(2)">
+		<input type="button" class="button number" name="three" value="3" onclick="enterNumber(3)">
+		<br>
+		<input type="button" class="button" name="plus/minus" value="+/-" onclick="invert()">
+		<input type="button" class="button number" name="0" value="0" onclick="enterNumber(0)">
+		<input type="button" class="button" name="decimal" value="," onclick="decimal()">
+		<input type="button" class="button" name="=" value="=" onclick="enter()">
+		<br>
+		<!-- Standaard rekenmachine acties -->
+		<input type="button" class="button" name="add" value="+" onclick="add()">
+		<input type="button" class="button" name="subtract" value="-" onclick="subtract()">
+		<input type="button" class="button" name="multiply" value="*" onclick="multiply()">
+		<input type="button" class="button" name="divide" value="/" onclick="divide()">
+		<br>
+		<input type="button" class="button" name="clear" value="clear" onclick="clear()">
+		<input type="button" class="button" name="clearone" value="x" onclick="clearOne()">
+		<br>
+		<!-- Speciale rekenmachine acties -->
+		<input type="button" class="button" name="incl BTW" value="incl BTW" onclick="addBTW()">
+		<input type="button" class="button" name="excl BTW" value="excl BTW" onclick="subtractBTW()">
+		<input type="button" class="button" name="percentage" value="%" onclick="calculatePercentage()">
+		<input type="button" class="button" name="sum" value="∑" onclick="calculateSum()">
+	</div>
+	<br>
+
+	<!--
+		Klant 1 kan met de incl BTW en excl BTW de berekeningen snel uitvoeren
+		Klant 1 kan met het geheugen snel inzien wat het resultaat is van beide berekeningen
+	-->
+
+	<!--
+		Klant 2 kan de artikelprijzen van de drie artikelen optellen
+		Klant 2 kan met de percentage knop de maximale korting berkenen aan de hand van de totaalprijs
+		Klant 2 kan deze twee resultaten met elkaar vergelijken door de geheugen functie raad te plegen
+	-->
+
+	<!--
+		Klant 3 zou een lijst met cijfers kunnen importeren van een kolom (in dit geval Saldo)
+		Klant 3 kan met de som knop de volledige som van de bedragen in de lijst krijgen
+	-->
+
+	<div class="import">
+		<input type="button" name="percentage" value="Importeer Lijst" onclick="importList()">
+	</div>
+	<br>
+
+	<div class="result">
+		Resultaat
+		<input disabled="disabled" id="amount" name="resultaat" value="0.00">
+	</div>
+	<br>
+
+	<div class="memory">
+		Geheugen
+		<ul>
+			<li>
+				<input disabled="disabled" id="amount" name="som" value="120 / 1,19 / 12 = 8.40">
+
+			</li>
+			<li>
+				<input disabled="disabled" id="amount" name="som" value="8.4 * 12 * 1.19 = 119.95">
+
+			</li>
+		</ul>
+	</div>
+
+	<script src="./script.js"></script>
+	</body>
+</html>
